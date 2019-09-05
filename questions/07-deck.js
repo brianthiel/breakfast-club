@@ -33,20 +33,21 @@ class DeckOfCards {
   // Deal five cards, when you've hit the end of the deck and there are less than 5 to deal return a notification
   dealFive() {
     // Create and object of players
-    let objectOfPlayers = {}
+    let objectOfPlayers = {};
+    let counter = 1;
     // Key reprsents their position
     for (let i = 1; i <= this.numberOfPlayers; i++) {
-      objectOfPlayers[i] = []
+      objectOfPlayers[i] = [];
     }
     
-    while (this.deck.length >= 6) {
-      for (let player in objectOfPlayers) {
+    while(this.deck.length !== 0 && counter < 6) {
         let topCard = this.deck.pop();
-        objectOfPlayers[player].push(topCard);
-      }
+        objectOfPlayers[counter].push(topCard);
+        counter++;
     }
-
+    console.log(objectOfPlayers)
     console.log(`There are ${this.deck.length} cards left in the deck`)
+    counter = 0;
     return objectOfPlayers
   }
 }
@@ -61,3 +62,8 @@ console.log(deck1.deck.length)
 deck1.shuffle()
 console.log(deck1.deck)
 deck1.dealFive()
+console.log(deck1.deck.length)
+deck1.dealFive()
+console.log(deck1.deck.length)
+deck1.dealFive()
+console.log(deck1.deck.length)
