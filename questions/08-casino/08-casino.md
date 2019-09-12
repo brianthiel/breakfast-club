@@ -15,3 +15,4 @@ Using the previous code, create a UI around `06-shuffle.js` and `07-deck.js`. I 
 - [ ] Maybe add an animation?
 - [ ] Add a reset button
 - [ ] When clicked you should be able to start over
+

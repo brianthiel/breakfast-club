@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react';
-
+import CardContainer from './CardContainer';
 
 function CardDeck() {
     const [suits] = useState(['hearts', 'diamonds', 'clubs', 'spades'])
     const [values] = useState([2, 3, 4, 5, 6, 7, 8, 9, 10, 'jack', 'queen', 'king', 'ace'])
     const [deck, setDeck] = useState([])
-
+    
     const createDeck = () => {
         let result = [];
 
@@ -29,7 +29,8 @@ function CardDeck() {
 
     return (
         <div>
-            This is the: {deck.length}
+            <h1>This is the: {deck.length}</h1>
+            <CardContainer deck={deck}/>
         </div>
     )
 }
