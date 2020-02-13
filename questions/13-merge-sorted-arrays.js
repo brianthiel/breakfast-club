@@ -8,8 +8,21 @@
 // [1, 2, 2, 3, 3, 4, 5, 6, 6, 7, 8, 9, 12, 18, 19, 22, 22, 23, 23, 99]
 
 const mergeSortedArrays = (arr1, arr2) => {
-  // code here but don't do this
-  return [...arr1, ...arr2].sort(); //O(nlogn) //O(n)
+	let result = [];
+	let idx1 = 0;
+	let idx2 = 0;
+
+	while (idx1 < arr1.length || idx2 < arr2.length) {
+		if (arr1[idx1] <= arr2[idx2]) {
+			result.push(arr1[idx1]);
+			idx1++;
+		} else {
+			result.push(arr2[idx2]);
+			idx2++;
+		}
+	}
+
+	return result;
 };
 
 module.exports = mergeSortedArrays;
