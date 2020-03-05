@@ -7,7 +7,23 @@
 // [2, 1, 6, 4]
 
 const findDups = (arr) => {
+	let hashmap = {};
+	let dupsArray = [];
+	arr.forEach((item) => {
+		let key = item.toString();
 
+		if (key in hashmap) {
+			hashmap[key] += 1;
+		} else { 
+			hashmap[key] = 1;
+		}
+	  
+		if (hashmap[key] > 1) {
+			delete hashmap[key];
+			dupsArray.push(item);
+		}
+	});
+	return dupsArray;
 }
 
 module.exports = findDups;
