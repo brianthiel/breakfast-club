@@ -7,7 +7,11 @@
 // [2, 1, 6, 4]
 
 const findDups = (arr) => {
-
+	return arr.filter((num, idx, arr) => {
+		if (arr.indexOf(num) !== idx) {
+			return num;
+		}
+	});
 }
 
 module.exports = findDups;
