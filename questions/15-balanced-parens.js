@@ -6,7 +6,19 @@
 // const parens = "()(())(" // should be false
 
 const balancedParens = (expression) => {
+	let singles = [];
 
+	expression.split('').forEach(single => {
+		if (single === '(') {
+			singles.push(single);
+		}
+
+		if (single === ')' && single !== singles.pop()) {
+			return;
+		}
+	})
+
+	return singles.length === 0;
 }
 
 module.exports = balancedParens;
